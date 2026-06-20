@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Insight Agent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Pi Agent Web Service</p>
+        <h1>Review Insight Agent</h1>
+        <p class="lead">
+          쇼핑/커머스 리뷰를 분석해 장점, 불만, 구매 전 주의사항을 정리하는 AI Agent
+        </p>
+      </div>
+    </header>
+
+    <section class="workspace-grid">
+      <section class="input-panel">
+        <div class="panel-heading">
+          <p class="eyebrow">Input</p>
+          <h2>리뷰 데이터 입력</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="입력 방식">
+          <button class="tab-button active" id="textTabButton" onclick="switchTab('text')" type="button">
+            직접 입력
+          </button>
+          <button class="tab-button" id="csvTabButton" onclick="switchTab('csv')" type="button">
+            CSV 업로드
+          </button>
+        </div>
+
+        <div class="tab-panel active" id="textPanel">
+          <label for="reviewText">리뷰 텍스트</label>
+          <textarea
+            id="reviewText"
+            placeholder="리뷰를 한 줄씩 입력하세요. 예: 배송은 빠르지만 제품 냄새가 조금 납니다."
+          ></textarea>
+          <button class="primary-button" onclick="analyzeText()" type="button">
+            텍스트 리뷰 분석
+          </button>
+        </div>
+
+        <div class="tab-panel" id="csvPanel">
+          <label for="csvFile">CSV 파일</label>
+          <input type="file" id="csvFile" accept=".csv">
+          <p class="hint">review, 리뷰, 상품평, 후기 컬럼을 자동 인식합니다.</p>
+          <button class="primary-button" onclick="analyzeCsv()" type="button">
+            CSV 리뷰 분석
+          </button>
+        </div>
+      </section>
+
+      <section id="result" class="result-panel">
+        <div class="empty-state">
+          <p class="eyebrow">Dashboard</p>
+          <h2>분석 결과가 여기에 표시됩니다.</h2>
+          <p>리뷰를 입력하거나 CSV를 업로드하면 Agent 처리 과정과 구매 인사이트가 대시보드로 정리됩니다.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
