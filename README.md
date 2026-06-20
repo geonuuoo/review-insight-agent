@@ -324,9 +324,20 @@ review-insight-agent
 
 # Screenshots
 
-프로젝트 실행 화면
+### Main UI
 
-* 메인 화면
-* 리뷰 분석 결과 화면
-* CSV 업로드 분석 화면
-* Pi Agent 실행 화면
+![Main UI](screenshots/1.png)
+
+### Insight Cards
+
+![Insight Cards](screenshots/2.png)
+
+### Sentiment Analysis and Agent Flow
+
+![Sentiment Analysis and Agent Flow](screenshots/3.png)
+
+### History and Saved Results
+
+![History and Saved Results](screenshots/4.png)
+
+
